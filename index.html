@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f1e9">
+<title>KJ's Family Dinner Poll</title>
+<style>
+:root{--ink:#18312b;--muted:#62736b;--paper:#f4f1e9;--card:#fffdf8;--green:#1f644d;--green2:#e6f0e8;--line:#e5e3d9;--gold:#d5a34b;--red:#a54135;--shadow:0 18px 48px #16372b12}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#e8eee4 0,#f4f1e9 48rem);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{width:min(100% - 28px,680px);margin:0 auto;padding:30px 0 54px}.brand{display:flex;justify-content:space-between;align-items:center;margin:0 4px 18px;color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.brand span:last-child{letter-spacing:.02em;text-transform:none;font-weight:650}.panel{background:var(--card);border:1px solid #ffffff;border-radius:26px;box-shadow:var(--shadow);overflow:hidden}.hero{padding:32px 34px 24px;background:linear-gradient(135deg,#fffdf8,#f5f3e9)}.eyebrow{color:var(--green);font-size:12px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,7vw,51px);line-height:1.02;letter-spacing:-.04em;margin:12px 0 13px}.hero p{max-width:520px;color:var(--muted);margin:0}.salad{display:inline-flex;align-items:center;gap:7px;background:#f0ead8;color:#715b2c;border-radius:99px;padding:7px 12px;font-size:12px;font-weight:800;margin-top:18px}.body{padding:25px 34px 30px}.section-title{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:0 0 12px}.section-title h2{font-size:18px;margin:0}.section-title small{font-size:12px;color:var(--muted)}.choices{display:grid;gap:10px}.choice{position:relative;display:flex;align-items:center;gap:13px;min-height:64px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:white;cursor:pointer;transition:.15s}.choice:hover{border-color:#9dbba8;transform:translateY(-1px)}.choice:has(input:checked){border-color:var(--green);background:var(--green2);box-shadow:inset 0 0 0 1px var(--green)}.choice input{width:19px;height:19px;accent-color:var(--green);flex:none}.choice strong{font-size:15px}.count{margin-left:auto;min-width:30px;text-align:center;color:var(--green);font-weight:850;font-variant-numeric:tabular-nums}.results-note{margin:9px 2px 0;color:var(--muted);font-size:12px}.divider{border:0;border-top:1px solid var(--line);margin:25px 0 22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:780}.field label em{font-style:normal;color:var(--red)}.field label small{font-size:11px;color:var(--muted);font-weight:600}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:11px;background:#fff;padding:12px 13px;font:inherit;color:var(--ink);outline:none}.field textarea{min-height:86px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #1f644d18}.privacy{display:flex;gap:10px;background:#f1f4ef;border:1px solid #e0e8df;border-radius:13px;padding:12px 14px;margin-top:17px;color:#425b4d;font-size:12px}.privacy b{display:block;margin-bottom:2px;color:var(--ink);font-size:12px}.privacy .lock{font-size:18px;line-height:1.2}.submit{width:100%;min-height:52px;margin-top:18px;background:var(--green);border:0;border-radius:13px;color:#fff;font:inherit;font-weight:850;cursor:pointer;transition:.15s}.submit:hover:not(:disabled){background:#174c3a;transform:translateY(-1px)}.submit:disabled{opacity:.55;cursor:not-allowed}.status{min-height:22px;margin-top:12px;color:var(--muted);font-size:13px}.status.error{color:var(--red)}.status.success{color:var(--green);font-weight:700}.bottom{padding:17px 34px 20px;background:#faf8f1;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.bottom a{color:var(--green);font-weight:750;text-decoration:none}.bottom a:hover{text-decoration:underline}.bottom p{margin:0}.bottom p+p{margin-top:5px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:560px){main{width:min(100% - 20px,680px);padding-top:17px}.brand{margin-bottom:12px}.hero{padding:25px 21px 20px}.body{padding:22px 21px 25px}.bottom{padding:16px 21px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.section-title{align-items:start;flex-direction:column;gap:2px}.choice{min-height:59px;padding:12px 13px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><span>Family table</span><span>KJ Silva · Dinner poll</span></div>
+  <section class="panel" aria-labelledby="page-title">
+    <header class="hero">
+      <div class="eyebrow">A little family vote</div>
+      <h1 id="page-title">What sounds good<br>for dinner?</h1>
+      <p>Help KJ and the family choose a favorite. Pick one or more dishes and add any details the organizer should know.</p>
+      <span class="salad">✦ Mixed green salad included</span>
+    </header>
+    <form id="vote-form" class="body">
+      <div class="section-title"><h2>Choose your meal</h2><small>Select at least one</small></div>
+      <div class="choices" role="group" aria-label="Dinner choices">
+        <label class="choice"><input type="checkbox" name="meal" value="Seared Atlantic salmon"><strong>Seared Atlantic salmon</strong><span class="count" id="count-salmon" aria-label="votes">—</span></label>
+        <label class="choice"><input type="checkbox" name="meal" value="Steak frites"><strong>Steak frites</strong><span class="count" id="count-steak" aria-label="votes">—</span></label>
+        <label class="choice"><input type="checkbox" name="meal" value="Cacio e pepe"><strong>Cacio e pepe</strong><span class="count" id="count-cacio" aria-label="votes">—</span></label>
+      </div>
+      <p class="results-note">Shared results show totals only; individual responses are private.</p>
+      <hr class="divider">
+      <div class="section-title"><h2>Tell KJ who you are</h2><small>Contact details are private</small></div>
+      <div class="fields">
+        <div class="field"><label for="name">Your name <em>*</em></label><input id="name" name="respondent_name" required maxlength="80" autocomplete="name" placeholder="First and last name"></div>
+        <div class="field"><label for="phone">Phone number <small>(optional)</small></label><input id="phone" name="phone_number" type="tel" maxlength="40" autocomplete="tel" placeholder="Best number to reach you"></div>
+        <div class="field full"><label for="allergies">Allergies or dietary needs <small>(optional)</small></label><textarea id="allergies" name="allergy_details" maxlength="500" placeholder="Ingredients to avoid or other dietary needs"></textarea></div>
+        <div class="field full"><label for="substitutions">Substitution request <small>(optional)</small></label><textarea id="substitutions" name="substitution_request" maxlength="500" placeholder="A swap you would like KJ to ask the restaurant about"></textarea></div>
+      </div>
+      <div class="privacy"><span class="lock" aria-hidden="true">🔒</span><span><b>Your contact and food details stay private.</b>Only the authorized organizer can see names, phone numbers, meal choices, allergies, and substitution requests. The public poll shows meal totals only.</span></div>
+      <button class="submit" id="submit" type="submit" disabled>Connecting to the family poll…</button>
+      <div class="status" id="status" role="status" aria-live="polite">Loading the shared poll…</div>
+    </form>
+    <footer class="bottom"><p>Substitutions are requests, not guarantees. Please confirm ingredients and cross-contact safety with the restaurant.</p><p>Organizer? <a href="organizer.html">Open the private organizer view</a></p></footer>
+  </section>
+</main>
+<script type="module">
+const SUPABASE_URL = "SUPABASE_URL_FROM_SETUP";
+const SUPABASE_ANON_KEY = "SUPABASE_PUBLISHABLE_KEY_FROM_SETUP";
+const POLL_ID = "kj-family-dinner-2026";
+const form = document.querySelector("#vote-form");
+const submit = document.querySelector("#submit");
+const status = document.querySelector("#status");
+const configOk = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("FROM_SETUP") && !SUPABASE_ANON_KEY.includes("FROM_SETUP");
+let client, voterId;
+function say(message, kind=""){status.className=`status ${kind}`.trim();status.textContent=message;}
+function chosenMeals(){return [...form.querySelectorAll('input[name="meal"]:checked')].map(x=>x.value);}
+function updateSubmit(){submit.disabled=!client||!form.checkValidity()||!chosenMeals().length;}
+function renderCounts(rows){const ids={"Seared Atlantic salmon":"count-salmon","Steak frites":"count-steak","Cacio e pepe":"count-cacio"};for(const [meal,id] of Object.entries(ids)){const row=rows.find(x=>x.meal_choice===meal);document.getElementById(id).textContent=String(row?.vote_count??0);}}
+async function refresh(){const {data,error}=await client.rpc("get_kj_family_dinner_totals");if(error)throw error;renderCounts(data||[]);}
+form.addEventListener("input",updateSubmit);
+form.addEventListener("change",updateSubmit);
+form.addEventListener("submit",async e=>{e.preventDefault();if(!client||!form.reportValidity()||chosenMeals().length===0){updateSubmit();return;}submit.disabled=true;submit.textContent="Saving your vote…";say("Saving your response privately…");try{const {error}=await client.rpc("submit_kj_family_dinner_vote",{p_voter_id:voterId,p_respondent_name:form.elements.respondent_name.value.trim(),p_phone_number:form.elements.phone_number.value.trim(),p_meal_choices:chosenMeals(),p_allergy_details:form.elements.allergy_details.value.trim(),p_substitution_request:form.elements.substitution_request.value.trim()});if(error)throw error;await refresh();say("Your vote is saved. Only the authorized organizer can see your response details.","success");submit.textContent="Update my response";}catch(err){console.error(err);say("We couldn't save your vote. Please check your connection and try again.","error");submit.textContent="Try again";}finally{updateSubmit();}});
+for(const input of form.querySelectorAll('input[name="meal"]'))input.addEventListener("change",updateSubmit);
+if(!configOk){submit.textContent="Shared poll setup is incomplete";say("The shared database still needs to be connected before voting is live.","error");}
+else{try{const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");client=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);voterId=localStorage.getItem(`kj-family-dinner:${POLL_ID}:id`);if(!voterId){voterId=crypto.randomUUID();localStorage.setItem(`kj-family-dinner:${POLL_ID}:id`,voterId);}await refresh();submit.textContent="Save my response";say("Shared poll is ready. Choose a meal and add your name.");updateSubmit();}catch(err){console.error(err);submit.textContent="Poll connection unavailable";say("The shared poll couldn't connect. Please try again later.","error");}}
+</script>
+</body>
+</html>
