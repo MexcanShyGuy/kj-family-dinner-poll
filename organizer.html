@@ -19,8 +19,8 @@
 </div></section><p class="footer">Keep this page and its sign-in link private. Substitutions should be confirmed with the restaurant.</p>
 </main>
 <script type="module">
-const SUPABASE_URL="SUPABASE_URL_FROM_SETUP";
-const SUPABASE_ANON_KEY="SUPABASE_PUBLISHABLE_KEY_FROM_SETUP";
+const SUPABASE_URL="https://aqtmwyvenedhwwqwflxr.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_mo1iwb7ct4y-dRLZX-VlJQ_v9EZl6vW";
 const ok=SUPABASE_URL.startsWith("https://")&&!SUPABASE_URL.includes("FROM_SETUP")&&!SUPABASE_ANON_KEY.includes("FROM_SETUP");
 const login=document.querySelector("#login"),dashboard=document.querySelector("#dashboard"),pageStatus=document.querySelector("#page-status"),loginStatus=document.querySelector("#login-status");
 function note(el,text,kind=""){el.className=`status ${kind}`.trim();el.textContent=text;}
